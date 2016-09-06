@@ -1,0 +1,2 @@
+from multiplechoicesfield.db.fields import MultipleChoicesField
+from multiplechoicesfield.forms.fields import MultipleChoicesFormField
