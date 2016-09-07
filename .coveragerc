@@ -1,5 +1,5 @@
 [run]
-source = multiplechoicesfield
+source = multipleselectionfield
 omit =
     example/*
 

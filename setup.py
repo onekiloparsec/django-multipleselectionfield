@@ -28,7 +28,7 @@ def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
 setup(
-    name="django-multiplechoicesfield",
+    name="django-multipleselectionfield",
     version="0.9.0",
     author="Cédric Foellmi",
     author_email="cedric@onekilopars.ec",
@@ -43,7 +43,7 @@ setup(
     ],
     license="LGPL 3",
     keywords="django,multiple,select,field,choices",
-    url='https://github.com/onekiloparsec/django-multiplechoicesfield',
+    url='https://github.com/onekiloparsec/django-multipleselectionfield',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,

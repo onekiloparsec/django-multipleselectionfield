@@ -1,17 +1,17 @@
-django-multiplechoicesfield
+django-multipleselectionfield
 =======================
 
-.. image:: https://travis-ci.org/goinnn/django-multiplechoicesfield.png?branch=master
-    :target: https://travis-ci.org/goinnn/django-multiplechoicesfield
+.. image:: https://travis-ci.org/goinnn/django-multipleselectionfield.png?branch=master
+    :target: https://travis-ci.org/goinnn/django-multipleselectionfield
 
-.. image:: https://coveralls.io/repos/goinnn/django-multiplechoicesfield/badge.png?branch=master
-    :target: https://coveralls.io/r/goinnn/django-multiplechoicesfield
+.. image:: https://coveralls.io/repos/goinnn/django-multipleselectionfield/badge.png?branch=master
+    :target: https://coveralls.io/r/goinnn/django-multipleselectionfield
 
-.. image:: https://badge.fury.io/py/django-multiplechoicesfield.png
-    :target: https://badge.fury.io/py/django-multiplechoicesfield
+.. image:: https://badge.fury.io/py/django-multipleselectionfield.png
+    :target: https://badge.fury.io/py/django-multipleselectionfield
 
-.. image:: https://pypip.in/d/django-multiplechoicesfield/badge.png
-    :target: https://pypi.python.org/pypi/django-multiplechoicesfield
+.. image:: https://pypip.in/d/django-multipleselectionfield/badge.png
+    :target: https://pypi.python.org/pypi/django-multipleselectionfield
 
 A new model and form field. With this you can get a multiple select from a choices
 
@@ -35,7 +35,7 @@ In your models.py
 
 ::
 
-    from multiplechoicesfield import MultiSelectField
+    from multipleselectionfield import MultiSelectField
 
     ...
 
@@ -55,8 +55,8 @@ In your models.py
 
         .....
 
-        my_field = MultipleChoicesField(choices=MY_CHOICES)
-        my_field2 = MultipleChoicesField(choices=MY_CHOICES2,
+        my_field = MultipleSelectionField(choices=MY_CHOICES)
+        my_field2 = MultipleSelectionField(choices=MY_CHOICES2,
                                      max_choices=3,
                                      max_length=3)
 
@@ -64,7 +64,7 @@ In your models.py
 In your settings.py
 -------------------
 
-Only you need it, if you want the translation of django-multiplechoicesfield
+Only you need it, if you want the translation of django-multipleselectionfield
 
 ::
 
@@ -77,7 +77,7 @@ Only you need it, if you want the translation of django-multiplechoicesfield
 
         #.....................#
 
-        'multiplechoicesfield',
+        'multipleselectionfield',
     )
 
 
@@ -86,11 +86,11 @@ Example project
 ===============
 
 In the source tree, you will find a directory called  
-`example <https://github.com/onekiloparsec/django-multiplechoicesfield/tree/master/example/>`_. 
-It contains a readily setup project that uses django-multiplechoicesfield. You can run it as usual:
+`example <https://github.com/onekiloparsec/django-multipleselectionfield/tree/master/example/>`_. 
+It contains a readily setup project that uses django-multipleselectionfield. You can run it as usual:
 
 ::
 
-    python manage.py syncdb --noinput
+    python manage.py migrate --noinput
     python manage.py loaddata app_data
     python manage.py runserver

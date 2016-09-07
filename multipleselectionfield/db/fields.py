@@ -8,7 +8,7 @@ from django.db import models
 from django.utils.text import capfirst
 from django.core import exceptions
 
-from ..forms.fields import MultiSelectFormField, MaxChoicesValidator
+from ..forms.fields import MultipleSelectionFormField, MaxChoicesValidator
 from ..utils import get_max_length
 from ..validators import MaxValueMultiFieldValidator
 
@@ -20,12 +20,12 @@ else:
 # Code from six egg https://bitbucket.org/gutworth/six/src/a3641cb211cc360848f1e2dd92e9ae6cd1de55dd/six.py?at=default
 
 
-class MultipleChoicesField(models.CharField):
+class MultipleSelectionField(models.CharField):
     """ Choice values can not contain commas. """
 
     def __init__(self, *args, **kwargs):
         self.max_choices = kwargs.pop('max_choices', None)
-        super(MultipleChoicesField, self).__init__(*args, **kwargs)
+        super(MultipleSelectionField, self).__init__(*args, **kwargs)
         self.max_length = get_max_length(self.choices, self.max_length)
         self.validators[0] = MaxValueMultiFieldValidator(self.max_length)
         if self.max_choices is not None:
@@ -58,7 +58,7 @@ class MultipleChoicesField(models.CharField):
                     raise exceptions.ValidationError(self.error_messages['invalid_choice'] % value)
 
     def get_default(self):
-        default = super(MultipleChoicesField, self).get_default()
+        default = super(MultipleSelectionField, self).get_default()
         if isinstance(default, int):
             default = string_type(default)
         return default
@@ -73,7 +73,7 @@ class MultipleChoicesField(models.CharField):
         if self.has_default():
             defaults['initial'] = self.get_default()
         defaults.update(kwargs)
-        return MultiSelectFormField(**defaults)
+        return MultipleSelectionFormField(**defaults)
 
     def get_prep_value(self, value):
         return '' if value is None else ",".join(value)
@@ -83,7 +83,7 @@ class MultipleChoicesField(models.CharField):
             return value if isinstance(value, list) else value.split(',')
 
     def contribute_to_class(self, cls, name):
-        super(MultipleChoicesField, self).contribute_to_class(cls, name)
+        super(MultipleSelectionField, self).contribute_to_class(cls, name)
         if self.choices:
             def get_list(obj):
                 fieldname = name
@@ -109,6 +109,6 @@ class MultipleChoicesField(models.CharField):
 
 try:
     from south.modelsinspector import add_introspection_rules
-    add_introspection_rules([], ['^multiplechoicesfield\.db.fields\.MultipleChoicesField'])
+    add_introspection_rules([], ['^multipleselectionfield\.db.fields\.MultipleSelectionField'])
 except ImportError:
     pass
