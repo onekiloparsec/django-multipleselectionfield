@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 
-try:
-    from django.conf.urls import include, patterns, url
-except ImportError:  # Django < 1.4
-    from django.conf.urls.defaults import include, patterns, url
+from django.conf.urls import url
+from .views import app_index
 
-
-urlpatterns = patterns('example.app.views',
-    url(r'^$', 'app_index', name='app_index'),
-)
+urlpatterns = [
+    url(r'^$', app_index, name='app_index'),
+]

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from django.conf import settings
-try:
-    from django.conf.urls import include, patterns, url
-except ImportError:  # Django < 1.4
-    from django.conf.urls.defaults import include, patterns, url
+from django.conf.urls import include, url
 
 from django.contrib import admin
+from django.views.static import serve
+
+from .app import urls as app_urls
 
 admin.autodiscover()
 
@@ -14,14 +14,12 @@ js_info_dict = {
     'packages': ('django.conf',),
 }
 
-urlpatterns = patterns('',
-    url(r'^', include('example.app.urls')),
+urlpatterns = [
+    url(r'^', include(app_urls)),
     url(r'^admin/', include(admin.site.urls)),
-)
+]
 
-urlpatterns += patterns('',
-    (r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:],
-     'django.views.static.serve',
-     {'document_root': settings.MEDIA_ROOT,
-      'show_indexes': True}),
-)
+# urlpatterns += [
+#     url(r'^%s(?P<path>.*)$' % settings.MEDIA_URL[1:], serve,
+#      {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+# ]

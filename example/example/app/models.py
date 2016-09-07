@@ -2,7 +2,7 @@
 
 from django.db import models
 
-from multiplechoicesfield import MultipleChoicesField
+from multipleselectionfield import MultipleSelectionField
 
 CATEGORY_CHOICES = (
     (1, 'Handbooks and manuals by discipline'),
@@ -27,12 +27,8 @@ TAGS_CHOICES = (
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
-    categories = MultipleChoicesField(choices=CATEGORY_CHOICES,
-                                      max_choices=3,
-                                    #default='1,5')
-                                    default=1)
-    tags = MultipleChoicesField(choices=TAGS_CHOICES,
-                                null=True, blank=True)
+    categories = MultipleSelectionField(choices=CATEGORY_CHOICES, max_choices=3, default=1)
+    tags = MultipleSelectionField(choices=TAGS_CHOICES, null=True, blank=True)
 
     def __str__(self):
         return self.title
