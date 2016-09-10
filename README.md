@@ -15,7 +15,7 @@ and including the improvements of most of the existing forks.
 
 The LPGL v3 licence is preserved.
 
-Originally, this egg is inspired by this `snippet <http://djangosnippets.org/snippets/1200/>`_
+Originally, this egg is inspired by this [snippet](<http://djangosnippets.org/snippets/1200/)
 
 
 Installation
