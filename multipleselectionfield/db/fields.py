@@ -61,6 +61,8 @@ class MultipleSelectionField(models.CharField):
         default = super(MultipleSelectionField, self).get_default()
         if isinstance(default, int):
             default = string_type(default)
+        if isinstance(default, string_type):
+            default = default.split(',')
         return default
 
     def formfield(self, **kwargs):
@@ -80,7 +82,11 @@ class MultipleSelectionField(models.CharField):
 
     def to_python(self, value):
         if value:
-            return value if isinstance(value, list) else value.split(',')
+            return value if isinstance(value, (list, set)) else value.split(',')
+        return []
+
+    def from_db_value(self, value, expression, connection, context):
+        return self.to_python(value)
 
     def contribute_to_class(self, cls, name):
         super(MultipleSelectionField, self).contribute_to_class(cls, name)
