@@ -1,17 +1,11 @@
 django-multipleselectionfield
 =======================
 
-.. image:: https://travis-ci.org/goinnn/django-multipleselectionfield.png?branch=master
-    :target: https://travis-ci.org/goinnn/django-multipleselectionfield
+[![Build Status](https://travis-ci.org/onekiloparsec/django-multipleselectionfield.png?branch=master)](https://travis-ci.org/onekiloparsec/django-multipleselectionfield)
 
-.. image:: https://coveralls.io/repos/goinnn/django-multipleselectionfield/badge.png?branch=master
-    :target: https://coveralls.io/r/goinnn/django-multipleselectionfield
+[![Coverage](https://coveralls.io/repos/onekiloparsec/django-multipleselectionfield/badge.png?branch=master)](https://coveralls.io/r/onekiloparsec/django-multipleselectionfield)
 
-.. image:: https://badge.fury.io/py/django-multipleselectionfield.png
-    :target: https://badge.fury.io/py/django-multipleselectionfield
-
-.. image:: https://pypip.in/d/django-multipleselectionfield/badge.png
-    :target: https://pypi.python.org/pypi/django-multipleselectionfield
+[![PyPi](https://pypip.in/d/django-multipleselectionfield/badge.png)](https://pypi.python.org/pypi/django-multipleselectionfield)
 
 A new model and form field. With this you can get a multiple select from a choices
 
