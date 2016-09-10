@@ -25,8 +25,6 @@ Installation
 In your models.py
 -----------------
 
-::
-
     from multipleselectionfield import MultiSelectField
 
     ...
@@ -58,18 +56,10 @@ In your settings.py
 
 Only you need it, if you want the translation of django-multipleselectionfield
 
-::
-
     INSTALLED_APPS = (
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.sites',
-        'django.contrib.admin',
-
-        #.....................#
-
+        #...
         'multipleselectionfield',
+        #...        
     )
 
 
@@ -78,10 +68,8 @@ Example project
 ===============
 
 In the source tree, you will find a directory called  
-`example <https://github.com/onekiloparsec/django-multipleselectionfield/tree/master/example/>`_. 
+[example](https://github.com/onekiloparsec/django-multipleselectionfield/tree/master/example/) 
 It contains a readily setup project that uses django-multipleselectionfield. You can run it as usual:
-
-::
 
     python manage.py migrate --noinput
     python manage.py loaddata app_data
