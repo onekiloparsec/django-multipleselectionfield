@@ -25,7 +25,7 @@ Installation
 In your models.py
 -----------------
 
-    from multipleselectionfield import MultiSelectField
+    from multipleselectionfield import MultipleSelectionField
 
     ...
 
