@@ -1,4 +1,4 @@
-include README.rst
-include CHANGES.rst
+include README.md
+include CHANGES.md
 include COPYING.LGPLv3
 include multipleselectionfield/locale/*/LC_MESSAGES/*.*

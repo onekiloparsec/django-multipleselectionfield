@@ -7,4 +7,4 @@ local_settings.py
 build
 dist
 *.egg-info
-/example/example.db
+example.db

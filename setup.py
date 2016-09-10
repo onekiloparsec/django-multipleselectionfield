@@ -15,10 +15,12 @@
 # along with this programe.  If not, see <http://www.gnu.org/licenses/>.
 
 # Initial code got from https://github.com/goinnn/django-multiselectfield by Pablo Martin
+#
 # September 2016:
 # After more than 2 years without activity and no fork taking the control of it, I
 # attempt a renaming with merge of most of the forks advances.
 # The LPGL v3 licence is preserved.
+#
 
 import os
 from setuptools import setup, find_packages
