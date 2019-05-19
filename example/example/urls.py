@@ -14,9 +14,11 @@ js_info_dict = {
     'packages': ('django.conf',),
 }
 
+app_name = "multiselectionfield"
+
 urlpatterns = [
-    url(r'^', include(app_urls)),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include(app_urls, namespace='multiselectionfield')),
+    # url(r'^admin/', include(admin.site.urls, namespace='admin')),
 ]
 
 # urlpatterns += [
