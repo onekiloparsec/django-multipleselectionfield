@@ -33,7 +33,7 @@ setup(
     name="django-multipleselectionfield",
     version="0.9.0",
     author="Cédric Foellmi",
-    author_email="cedric@onekilopars.ec",
+    author_email="cedric@onekiloparsec.dev",
     description="Django multiple choices field",
     long_description=(read('README.md') + '\n\n' + read('CHANGES.md')),
     classifiers=[
