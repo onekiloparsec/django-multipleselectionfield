@@ -45,17 +45,14 @@ class MultipleSelectionField(models.CharField):
         return choices_selected
 
     def value_to_string(self, obj):
-        value = self._get_val_from_obj(obj)
+        value = self.value_from_object(obj)
         return self.get_prep_value(value)
 
     def validate(self, value, model_instance):
         arr_choices = self.get_choices_selected(self.get_choices_default())
         for opt_select in value:
             if (opt_select not in arr_choices):
-                if django.VERSION[0] == 1 and django.VERSION[1] >= 6:
-                    raise exceptions.ValidationError(self.error_messages['invalid_choice'] % {"value": value})
-                else:
-                    raise exceptions.ValidationError(self.error_messages['invalid_choice'] % value)
+                raise exceptions.ValidationError(self.error_messages['invalid_choice'] % {"value": value})
 
     def get_default(self):
         default = super(MultipleSelectionField, self).get_default()
@@ -85,8 +82,12 @@ class MultipleSelectionField(models.CharField):
             return value if isinstance(value, (list, set)) else value.split(',')
         return []
 
-    def from_db_value(self, value, expression, connection, context):
-        return self.to_python(value)
+    if django.VERSION < (2,):
+        def from_db_value(self, value, expression, connection, context):
+            return self.to_python(value)
+    else:
+        def from_db_value(self, value, expression, connection):
+            return self.to_python(value)
 
     def contribute_to_class(self, cls, name):
         super(MultipleSelectionField, self).contribute_to_class(cls, name)
