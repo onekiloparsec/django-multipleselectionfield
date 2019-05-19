@@ -36,6 +36,7 @@ setup(
     author_email="cedric@onekiloparsec.dev",
     description="Django multiple choices field",
     long_description=(read('README.md') + '\n\n' + read('CHANGES.md')),
+    long_description_content_type='text/markdown',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Framework :: Django',
