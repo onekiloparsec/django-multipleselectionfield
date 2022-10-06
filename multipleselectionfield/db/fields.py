@@ -12,10 +12,7 @@ from ..forms.fields import MultipleSelectionFormField, MaxChoicesValidator
 from ..utils import get_max_length
 from ..validators import MaxValueMultiFieldValidator
 
-if sys.version_info[0] == 2:
-    string_type = unicode
-else:
-    string_type = str
+string_type = str
 
 # Code from six egg https://bitbucket.org/gutworth/six/src/a3641cb211cc360848f1e2dd92e9ae6cd1de55dd/six.py?at=default
 

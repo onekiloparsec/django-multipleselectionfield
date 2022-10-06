@@ -31,7 +31,7 @@ def read(*rnames):
 
 setup(
     name="django-multipleselectionfield",
-    version="1.0.0",
+    version="1.1.0",
     author="Cédric Foellmi",
     author_email="cedric@onekiloparsec.dev",
     description="Django multiple choices field",
@@ -41,7 +41,6 @@ setup(
         'Development Status :: 4 - Beta',
         'Framework :: Django',
         'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
     ],
     license="LGPL 3",

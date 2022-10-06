@@ -1,3 +1,14 @@
+1.1.0 (2022-10-06)
+------------------
+
+* Drop support Python 2
+* Drop support Django 3 (use v1.0.0)
+* Added support Django 4
+
+1.0.0 (2019-05-19)
+------------------
+
+* Make the project work again
 
 0.9.0 (2016-09-06)
 ------------------
