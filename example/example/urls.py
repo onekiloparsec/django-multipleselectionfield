@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django.conf import settings
-from django.conf.urls import include, url
-
+from django.conf.urls import include
 from django.contrib import admin
-from django.views.static import serve
+from django.urls import re_path
 
 from .app import urls as app_urls
 
@@ -17,7 +15,7 @@ js_info_dict = {
 app_name = "multiselectionfield"
 
 urlpatterns = [
-    url(r'^', include(app_urls, namespace='multiselectionfield')),
+    re_path(r'^', include(app_urls, namespace='multiselectionfield')),
     # url(r'^admin/', include(admin.site.urls, namespace='admin')),
 ]
 
