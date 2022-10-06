@@ -22,9 +22,9 @@ class MultipleSelectionField(models.CharField):
 
     def __init__(self, *args, **kwargs):
         self.max_choices = kwargs.pop('max_choices', None)
-        super(MultipleSelectionField, self).__init__(*args, **kwargs)
+        super(MultipleSelectionField, self).__init__(*args, **kwargs, validators=())
         self.max_length = get_max_length(self.choices, self.max_length)
-        self.validators[0] = MaxValueMultiFieldValidator(self.max_length)
+        self.validators.insert(0, MaxValueMultiFieldValidator(self.max_length))
         if self.max_choices is not None:
             self.validators.append(MaxChoicesValidator(self.max_choices))
 
